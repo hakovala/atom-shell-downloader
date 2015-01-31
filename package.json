@@ -1,35 +1,35 @@
 {
-	"name": "atom-shell-downloader",
-	"description": "Download Atom-Shell releases",
-	"version": "0.0.1",
-	"main": "index.js",
-	"bin": {
-		"atom-shell-downloader": "bin/atom-shell-downloader.js"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/hakovala/atom-shell-downloader"
-	},
-	"dependencies": {
-		"commander": "^2.5.0",
-		"debug": "^2.1.0",
-		"filesize": "^2.0.4",
-		"fs-extra": "^0.12.0",
-		"github": "^0.2.2",
-		"minimatch": "^1.0.0",
-		"progress": "^1.1.8",
-		"request": "^2.47.0",
-		"semver": "^4.1.0",
-		"unzip": "^0.1.11"
-	},
-	"license": "MIT",
-	"author": "Harri Kovalainen <hakovala@gmail.com>",
-	"keywords": [
-		"atom",
-		"shell",
-		"atom-shell",
-		"download",
-		"downloader",
-		"extract"
-	]
+  "name": "atom-shell-downloader",
+  "description": "Download Atom-Shell releases",
+  "version": "0.1.0",
+  "main": "index.js",
+  "bin": {
+    "atom-shell-downloader": "bin/atom-shell-downloader.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hakovala/atom-shell-downloader"
+  },
+  "dependencies": {
+    "commander": "^2.5.0",
+    "debug": "^2.1.0",
+    "filesize": "^2.0.4",
+    "fs-extra": "^0.12.0",
+    "github": "^0.2.2",
+    "minimatch": "^1.0.0",
+    "progress": "^1.1.8",
+    "request": "^2.47.0",
+    "semver": "^4.1.0",
+    "unzip": "^0.1.11"
+  },
+  "license": "MIT",
+  "author": "Harri Kovalainen <hakovala@gmail.com>",
+  "keywords": [
+    "atom",
+    "shell",
+    "atom-shell",
+    "download",
+    "downloader",
+    "extract"
+  ]
 }
