@@ -7,6 +7,7 @@ var fs = require('fs-extra');
 var path = require('path');
 var debug = require('debug')('asd:cli'); 
 var ProgressBar = require('progress');
+var semver = require('semver');
 
 var pkg = require('../package.json');
 var program = require('commander');
@@ -21,6 +22,7 @@ program
 	.option('--arch [arch]', 'system architecture ie. ia32, x64')
 	.option('-f --filter [filepath]', 'filter out matching filepaths', [])
 	.option('-p --progress', 'show progress')
+	.option('--force', 'Force download')
 	.parse(process.argv);
 
 var output = program.output;
@@ -66,6 +68,13 @@ if (program.download) {
 				filename = path.join(filename, dist.name);
 			}
 		} catch(e) {}
+
+		// check if alread exists
+		if (!program.force && fs.existsSync(filename)) {
+			console.log('already downloaded: ' + filename);
+			return;
+		}
+
 		fs.ensureFileSync(filename);
 		download(dist.name, dist.download()).pipe(fs.createWriteStream(filename));
 	});
@@ -75,6 +84,16 @@ if (program.download) {
 		if (err) throw err;
 		var dist = latest.dists[platform + '-' + arch];
 		output = output || 'atom-shell';
+
+		// check if already exists
+		if (!program.force && fs.existsSync(output + '/version')) {
+			var version = fs.readFileSync(output + '/version').toString();
+			if (semver.eq(version, latest.version)) {
+				console.log('already downloaded:', version);
+				return;
+			}
+		}
+
 		download(dist.name, dist.extract(output, {
 			filter: program.filter
 		}));
