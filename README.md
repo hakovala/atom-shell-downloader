@@ -26,10 +26,13 @@ Additional options:
 	`--platform <platform>`: Select platform (linux, win32, darwin)
 	`--arch <arch>`: Select architecture (ia32, x64)
 	`-f <filepath>`: Skip specific filepath when extracting
+	`--force`: Force re-download
 
 Platform and architecture are automatically selected from the system if not specified.
 
 List, download and extract operations support Atom-Shell version selection with [semver](https://github.com/npm/node-semver) syntax
+
+If version is already downloaded/extracted, then only re-download it if force flag is given.
 
 List all available v0.20.x versions
 
