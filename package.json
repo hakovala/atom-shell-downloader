@@ -20,7 +20,7 @@
     "progress": "^1.1.8",
     "request": "^2.47.0",
     "semver": "^4.1.0",
-    "unzip": "^0.1.11"
+    "node-unzip-2": "^0.2.1"
   },
   "license": "MIT",
   "author": "Harri Kovalainen <hakovala@gmail.com>",

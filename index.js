@@ -5,7 +5,7 @@ var debug = require('debug')('asd');
 var semver = require('semver');
 var GitHub = require('github');
 var request = require('request');
-var unzip = require('unzip');
+var unzip = require('node-unzip-2');
 var fs = require('fs-extra');
 var minimatch = require('minimatch');
 var path = require('path');
@@ -32,7 +32,7 @@ function Release(release) {
 	release.assets.forEach(function(asset) {
 		var arch = parseName(asset.name);
 		if (!arch) return;
-		
+
 		var dist = {
 			name: asset.name,
 			url: asset.browser_download_url,
