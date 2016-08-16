@@ -2,6 +2,8 @@
 
 Download and extract latest or specific version of Atom-Shell.
 
+**THIS PROJECT IS DEPRECATED**, suggested replacement is [electron-prebuilt](https://www.npmjs.com/package/electron-prebuilt)
+
 ## Install
 
 	npm install -g atom-shell-downloader
